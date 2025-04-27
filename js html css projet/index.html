@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRAFT | Premium Fast Food Experience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Outfit:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- En-tête et Navigation -->
+    <header class="header">
+      <div class="container">
+        <nav class="navbar">
+          <a href="#" class="logo">Céleste</a>
+          <ul class="nav-menu">
+            <li><a href="#home" class="nav-link active">Accueil</a></li>
+            <li><a href="#about" class="nav-link">À Propos</a></li>
+            <li><a href="#menu" class="nav-link">Menu</a></li>
+            <li><a href="#special" class="nav-link">Spécialités</a></li>
+            <li><a href="#testimonials" class="nav-link">Témoignages</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+          <div class="nav-buttons"> 
+            <a href="#" class="nav-icon"> 
+              <i class="fas fa-search"></i>
+            </a>
+            <a href="#" class="nav-icon">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">3</span>
+            </a> 
+            <a href="#" class="theme-toggle" id="darkModeToggle">
+              <i class="fas fa-moon"></i>
+              <i class="fas fa-sun"></i>
+            </a>
+            <a href="#" class="btn btn-primary">Commander</a>
+          </div>
+          <div class="mobile-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay">
+      <ul class="mobile-nav-menu">
+        <li><a href="#home" class="nav-link active">Accueil</a></li>
+        <li><a href="#about" class="nav-link">À Propos</a></li>
+        <li><a href="#menu" class="nav-link">Menu</a></li>
+        <li><a href="#special" class="nav-link">Spécialités</a></li>
+        <li><a href="#testimonials" class="nav-link">Témoignages</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <div class="nav-buttons">
+          <a href="#" class="btn btn-primary">Commander</a>
+        </div>
+      </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <p class="hero-subtitle">Fast Food Artisanal</p>
+          <h1 class="hero-title">
+            Burgers Gourmets & Délices <span>Céleste</span>
+          </h1>
+          <p class="hero-description">
+            Découvrez le parfait équilibre entre commodité et art culinaire. 
+            Notre fast food utilise des ingrédients de qualité supérieure pour
+             une expérience culinaire exceptionnelle.
+          </p>
+          <div class="hero-buttons">
+            <a href="#menu" class="btn btn-secondary">Voir le Menu</a>
+            <a href="#" class="btn hero-btn-outline">Commander en Ligne</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <i class="fas fa-chevron-down"></i>
+        Défilez
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-content">
+            <p class="section-subtitle">Notre Histoire</p>
+            <h2 class="section-title">Fast Food Premium Réinventé</h2>
+            <p class="about-text">
+              Céleste a commencé avec une idée simple : le fast food ne doit pas sacrifier la qualité. 
+              Nous combinons la commodité du service rapide avec l'art de la cuisine gastronomique, 
+              en utilisant des ingrédients de qualité et des recettes élaborées par des chefs.
+            </p>
+            <p class="about-text">
+              Notre engagement envers la qualité s'étend de nos ingrédients soigneusement sélectionnés 
+              à notre préparation sur mesure. Chaque burger, sandwich et plat d'accompagnement est 
+              préparé avec un soin minutieux et une passion pour les saveurs exceptionnelles.
+            </p>
+            <div class="about-features">
+              <div class="about-feature">
+                <div class="about-feature-icon">
+                  <i class="fas fa-leaf"></i>
+                </div>
+                <div>
+                  <h4 class="about-feature-title">Ingrédients Premium</h4>
+                  <p class="about-feature-text">
+                    Légumes et viandes locaux de qualité supérieure.
+                  </p>
+                </div>
+              </div>
+              <div class="about-feature">
+                <div class="about-feature-icon">
+                  <i class="fas fa-utensils"></i>
+                </div>
+                <div>
+                  <h4 class="about-feature-title">Recettes Culinaires</h4>
+                  <p class="about-feature-text">
+                    Développées par des chefs primés.
+                  </p>
+                </div>
+              </div>
+              <div class="about-feature">
+                <div class="about-feature-icon">
+                  <i class="fas fa-bolt"></i>
+                </div>
+                <div>
+                  <h4 class="about-feature-title">Service Rapide</h4>
+                  <p class="about-feature-text">
+                    Préparé sur mesure sans compromis sur la vitesse.
+                  </p>
+                </div>
+              </div>
+              <div class="about-feature">
+                <div class="about-feature-icon">
+                  <i class="fas fa-heart"></i>
+                </div>
+                <div>
+                  <h4 class="about-feature-title">Fait avec Passion</h4>
+                  <p class="about-feature-text">
+                    Passion et soin dans chaque bouchée.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-image">
+            <div class="about-img"></div>
+            <div class="about-badge">depuis 2022</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+      <div class="container">
+        <div class="menu-header">
+          <p class="menu-subtitle">Notre Menu</p>
+          <h2 class="menu-title">Sélection de Nourriture Marocaine</h2>
+          <p class="menu-description">
+            Découvrez notre sélection de plats marocains authentiques, préparés
+            avec des ingrédients de qualité supérieure et un savoir-faire culinaire.
+            Des tajines traditionnels aux pâtisseries marocaines, chaque plat est
+            réalisé avec soin et passion.
+          </p>
+        </div>
+        <div class="menu-tabs">
+          <div class="menu-tab active">Tous</div>
+          <div class="menu-tab">Burgers Signature</div>
+          <div class="menu-tab">Sandwiches</div>
+          <div class="menu-tab">Entrées</div>
+          <div class="menu-tab">Desserts</div>
+          <div class="menu-tab">Boissons</div>
+        </div>
+        <div class="menu-grid">
+          <!-- Menu Item 1 --> 
+          <div class="menu-item">
+            <div class="menu-item-img"></div>
+            <div class="menu-item-badge">Bestseller</div>
+            <div class="menu-item-content">
+              <p class="menu-item-category">Signature Burgers</p>
+              <h3 class="menu-item-name">Burger à l'Aioli Truffe</h3>
+              <p class="menu-item-description">
+                Viande hachée de qualité, cheddar vieilli, roquette, oignons caramélisés et aioli à la truffe noire sur une brioche.
+              </p>
+              <div class="menu-item-bottom">
+                <div class="menu-item-price">14.95 DH</div>
+                <div class="menu-item-btn">
+                  <i class="fas fa-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Menu Item 2 -->
+          <div class="menu-item">
+            <img src="hq720.jpg" alt="">
+            <div class="menu-item-content">
+              <p class="menu-item-category">Appetizers</p>
+              <h3 class="menu-item-name">Baghrir</h3>
+              <p class="menu-item-description">
+                Crêpes marocaines traditionnelles servies avec du miel et du beurre.
+              </p>
+              <div class="menu-item-bottom">
+                <div class="menu-item-price">5.95dh</div>
+                <div class="menu-item-btn">
+                  <i class="fas fa-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-item">
+            <img src="images.jpeg" alt="">
+            <div class="menu-item-content">
+              <p class="menu-item-category">Appetizers</p>
+              <h3 class="menu-item-name">Briouat</h3>
+              <p class="menu-item-description">
+                Crispy pastry filled with spiced meat or almonds and honey.
+              </p>
+              <div class="menu-item-bottom">
+                <div class="menu-item-price">dh6.95</div>
+                <div class="menu-item-btn">
+                  <i class="fas fa-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-item">
+            <img src="images (1).jpeg" alt="">
+            <div class="menu-item-content">
+              <p class="menu-item-category">Main Courses</p>
+              <h3 class="menu-item-name">Couscous</h3>
+              <p class="menu-item-description">
+                Steamed semolina served with vegetables, chickpeas, and meat.
+              </p>
+              <div class="menu-item-bottom">
+                <div class="menu-item-price">dh14.95</div>
+                <div class="menu-item-btn">
+                  <i class="fas fa-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-item">
+            <img src="images (2).jpeg" alt="">
+            <div class="menu-item-content">
+              <p class="menu-item-category">Main Courses</p>
+              <h3 class="menu-item-name">Tajine</h3>
+              <p class="menu-item-description">
+                Slow-cooked stew with meat, vegetables, and aromatic spices.
+              </p>
+              <div class="menu-item-bottom">
+                <div class="menu-item-price">$16.95</div>
+                <div class="menu-item-btn">
+                  <i class="fas fa-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-item">
+            <img src="images (3).jpeg" alt="">
+            <div class="menu-item-content">
+              <p class="menu-item-category">Desserts</p>
+              <h3 class="menu-item-name">Chebakia</h3>
+              <p class="menu-item-description">
+                Sweet sesame cookies coated in honey and sprinkled with sesame seeds.
+              </p>
+              <div class="menu-item-bottom">
+                <div class="menu-item-price">dh4.95</div>
+                <div class="menu-item-btn">
+                  <i class="fas fa-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-item">
+            <img src="images (4).jpeg" alt="">
+            <div class="menu-item-content">
+              <p class="menu-item-category">Desserts</p>
+              <h3 class="menu-item-name">Seffa</h3>
+              <p class="menu-item-description">
+                Sweetened steamed couscous with cinnamon, sugar, and almonds.
+              </p>
+              <div class="menu-item-bottom">
+                <div class="menu-item-price">dh6.95</div>
+                <div class="menu-item-btn">
+                  <i class="fas fa-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Menu Item 3 -->
+          <div class="menu-item">
+            <img src="images (5).jpeg" alt="">
+            <div class="menu-item-badge">New</div>
+            <div class="menu-item-content">
+              <p class="menu-item-category">Signature Burgers</p>
+              <h3 class="menu-item-name">Umami Mushroom Burger</h3>
+              <p class="menu-item-description">
+                Grass-fed beef patty, sautéed wild mushrooms, Swiss cheese,
+                garlic aioli, and balsamic glaze on a pretzel bun.
+              </p>
+              <div class="menu-item-bottom">
+                <div class="menu-item-price">$15.95</div>
+                <div class="menu-item-btn">
+                  <i class="fas fa-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Menu Item 4 -->
+          <div class="menu-item">
+            <img src="images (6).jpeg" alt="">
+            <div class="menu-item-content">
+              <p class="menu-item-category">Sides</p>
+              <h3 class="menu-item-name">Truffle Parmesan Fries</h3>
+              <p class="menu-item-description">
+                Hand-cut kennebec potato fries tossed with truffle oil, grated
+                parmesan, and fresh herbs. Served with roasted garlic aioli.
+              </p>
+              <div class="menu-item-bottom">
+                <div class="menu-item-price">dh8.95</div>
+                <div class="menu-item-btn">
+                  <i class="fas fa-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Menu Item 5 -->
+          <div class="menu-item">
+            <img src="images (7).jpeg" alt="">
+            <div class="menu-item-content">
+              <p class="menu-item-category">Sides</p>
+              <h3 class="menu-item-name">Crispy Brussels Sprouts</h3>
+              <p class="menu-item-description">
+                Crispy fried brussels sprouts tossed with honey balsamic glaze,
+                toasted almonds, and dried cranberries.
+              </p>
+              <div class="menu-item-bottom">
+                <div class="menu-item-price">dh7.95</div>
+                <div class="menu-item-btn">
+                  <i class="fas fa-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Menu Item 6 -->
+          <div class="menu-item">
+            <img src="images (8).jpeg" alt="">
+            <div class="menu-item-badge">Popular</div>
+            <div class="menu-item-content">
+              <p class="menu-item-category">Desserts</p>
+              <h3 class="menu-item-name">Salted Caramel Milkshake</h3>
+              <p class="menu-item-description">
+                Handcrafted vanilla bean ice cream blended with house-made
+                salted caramel sauce, topped with whipped cream and caramel
+                drizzle.
+              </p>
+              <div class="menu-item-bottom">
+                <div class="menu-item-price">dh7.95</div>
+                <div class="menu-item-btn">
+                  <i class="fas fa-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <a href="#" class="btn btn-primary">Voir le Menu Complet</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special Section -->
+    <section class="special" id="special">
+      <div class="container special-container">
+        <div class="special-header">
+          <p class="special-subtitle">Offres Temporaires</p>
+          <h2 class="special-title">Spécialités Saisonnères</h2>
+          <p class="special-description">
+            Découvrez les créations saisonnières de nos chefs, avec des ingrédients de qualité à leur pleine maturité. 
+            Ces offres limitées mettent en avant des associations de saveurs innovantes.
+          </p>
+        </div>
+        <div class="special-grid">
+          <!-- Special Item 1 -->
+          <div class="special-item">
+            <div class="special-item-header">
+              <div>
+                <h3 class="special-item-title">Burger Récolte d'Été</h3>
+                <p class="special-item-subtitle">
+                  Disponible jusqu'au 30 septembre
+                </p>
+              </div>
+              <div class="special-item-price">dh16.95</div>
+            </div>
+            <div class="special-item-features">
+              <div class="special-item-feature">
+                <i class="fas fa-check"></i>
+                <span>Galette de bœuf nourri à l'herbe avec tomates anciennes</span>
+              </div>
+                <div class="special-item-feature">
+                <i class="fas fa-check"></i>
+                <span>Fromage burrata frais et pesto de basilic</span>
+                </div>
+                <div class="special-item-feature">
+                <i class="fas fa-check"></i>
+                <span>Réduction balsamique et roquette</span>
+                </div>
+                <div class="special-item-feature">
+                <i class="fas fa-check"></i>
+                <span>Served on a toasted ciabatta bun</span>
+              </div>
+            </div>
+            <div class="special-item-footer">
+              <a href="#" class="btn btn-secondary">Order Now</a>
+              <div class="special-item-badge">Limited Edition</div>
+            </div>
+          </div>
+          <!-- Special Item 2 -->
+          <div class="special-item">
+            <div class="special-item-header">
+              <div>
+                <h3 class="special-item-title">Artisanal Meal Deal</h3>
+                <p class="special-item-subtitle">Perfect for sharing</p>
+              </div>
+              <div class="special-item-price">$29.95</div>
+            </div>
+            <div class="special-item-features">
+              <div class="special-item-feature">
+                <i class="fas fa-check"></i>
+                <span>Two signature burgers of your choice</span>
+              </div>
+              <div class="special-item-feature">
+                <i class="fas fa-check"></i>
+                <span>Large truffle parmesan fries to share</span>
+              </div>
+              <div class="special-item-feature">
+                <i class="fas fa-check"></i>
+                <span>Two craft sodas or iced teas</span>
+              </div>
+              <div class="special-item-feature">
+                <i class="fas fa-check"></i>
+                <span>One dessert to share</span>
+              </div>
+            </div>
+            <div class="special-item-footer">
+              <a href="#" class="btn btn-secondary">Order Now</a>
+              <div class="special-item-badge">Best Value</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <div class="testimonial-header">
+          <p class="testimonial-subtitle">Avis des Clients</p>
+          <h2 class="testimonial-title">Ce que nos Clients Disent</h2>
+          <p class="testimonial-description">
+            Nous sommes fiers de fournir une expérience culinaire exceptionnelle. 
+            Voici ce que nos clients ont à dire à propos de notre fast food gastronomique.
+          </p>
+        </div>
+        <div class="testimonial-slider">
+          <div class="testimonial-item">
+            <div class="testimonial-item">
+              <div class="testimonial-quote">"</div>
+              <p class="testimonial-content">
+                Céleste a complètement changé ma perception du fast food. Le Burger à l'Aioli Truffe est une œuvre d'art – parfaitement cuit, incroyablement savoureux, avec des ingrédients de qualité. Un fast food avec la qualité de la cuisine raffinée.
+              </p>
+              <div class="testimonial-author">
+                <div class="testimonial-author-img"></div>
+                <div>
+                  <h4 class="testimonial-author-name">Imad Aitaomar</h4>
+                  <p class="testimonial-author-title">Client Passionné</p>
+                <div class="testimonial-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Order Section -->
+    <section class="order">
+      <div class="container">
+        <h2 class="order-title">Prêt à Découvrir le Fast Food Premium ?</h2>
+        <p class="order-text">
+          Commandez en ligne pour un retrait ou une livraison et savourez nos
+          délices élaborés par des chefs dans le confort de votre maison ou de
+          votre bureau. Rapide, pratique et exceptionnellement délicieux.
+        </p>
+        <a href="#" class="order-btn">commander maintenant</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a href="#" class="footer-logo">Céleste</a>
+            <p class="footer-text">
+              Redéfinition du fast food avec des ingrédients de qualité, des recettes élaborées par des chefs et des saveurs exceptionnelles. Un service rapide sans compromis sur la qualité.
+            </p>
+            <div class="footer-social">
+              <a href="#" class="footer-social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="footer-social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="footer-social-link"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="footer-social-link"
+                ><i class="fab fa-pinterest-p"></i
+              ></a>
+            </div>
+          </div>
+          <div>
+            <h3 class="footer-heading">Liens Rapides</h3>
+            <ul class="footer-links">
+              <li class="footer-link">
+                <a href="#home"><i class="fas fa-chevron-right"></i> Accueil</a>
+              </li>
+              <li class="footer-link">
+                <a href="#about"
+                  ><i class="fas fa-chevron-right"></i> À Propos</a
+                >
+              </li>
+              <li class="footer-link">
+                <a href="#menu"><i class="fas fa-chevron-right"></i> Menu</a>
+              </li>
+              <li class="footer-link">
+                <a href="#special"
+                  ><i class="fas fa-chevron-right"></i> Spécialités</a
+                >
+              </li>
+              <li class="footer-link">
+                <a href="#testimonials"
+                  ><i class="fas fa-chevron-right"></i> Avis</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-heading">Horaires</h3>
+            <ul class="footer-links">
+              <li class="footer-link"><a href="#">Lundi - Vendredi: 11h - 22h</a></li>
+              <li class="footer-link"><a href="#">Samedi: 10h - 23h</a></li>
+              <li class="footer-link"><a href="#">Dimanche: 10h - 21h</a></li>
+              <li class="footer-link"><a href="#">Commande en ligne 24/7</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-heading">Contact</h3>
+            <div class="footer-info">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>123 Avenue Gourmande, Quartier Culinaire, Rabat, Maroc</div>
+            </div>
+            <div class="footer-info">
+              <i class="fas fa-phone-alt"></i>
+              <div>+212 614 66075</div>
+            </div>
+            <div class="footer-info">
+              <i class="fas fa-envelope"></i>
+              <div>amine.aanbary.00@edu.uiz.ac.ma (Amine Aanbary)</div>
+            </div>
+            <div class="footer-info">
+              <i class="fas fa-envelope"></i>
+              <div>imad.aitaomar.71@edu.uiz.ac.ma (Imad Aitaomar)</div>
+            </div>
+            <div class="footer-info">
+              <i class="fas fa-envelope"></i>
+              <div>ayman.ligassi.23@edu.uiz.ac.ma (Ayman Ligassi)</div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Céleste. Tous droits réservés. | Site web par <a href="codingvox.com">CodingVox</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="updated-script.js"></script>
+  </body>
+</html>
