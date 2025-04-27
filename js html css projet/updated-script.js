@@ -62,12 +62,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const addButtons = document.querySelectorAll(".menu-item-btn");
     const cartCount = document.querySelector(".cart-count");
     const cartIcon = document.querySelector(".nav-icon .fa-shopping-cart").parentElement;
-    let count = 3;
-    let cartItems = [
-      { name: "Sample Item 1", price: 12.95 },
-      { name: "Sample Item 2", price: 8.95 },
-      { name: "Sample Item 3", price: 14.95 }
-    ];
+    let count = 0;
+    let cartItems = [];
     
     // Calculate initial total price
     let totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
