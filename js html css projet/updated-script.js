@@ -1,18 +1,18 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () { 
     const header = document.querySelector(".header");
    
-    function checkScroll() { 
+    function checkScroll() {  
       if (window.scrollY > 100) {
         header.classList.add("scrolled");
       } else {
         header.classList.remove("scrolled");
-      }
-    } 
+      } 
+    }  
   
     checkScroll(); 
     window.addEventListener("scroll", checkScroll);
   
-    // Mobile menu functionality
+    
     const mobileToggle = document.querySelector(".mobile-toggle");
     const mobileNavOverlay = document.querySelector(".mobile-nav-overlay");
     const mobileNavLinks = document.querySelectorAll(".mobile-nav-menu .nav-link");
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.body.style.overflow = mobileNavOverlay.classList.contains("active") ? "hidden" : "";
     });
     
-    // Close mobile menu when clicking on a link
+  
     mobileNavLinks.forEach((link) => {
       link.addEventListener("click", () => {
         mobileToggle.classList.remove("active");
@@ -58,21 +58,67 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }); 
   
-    // Cart functionality
+    
     const addButtons = document.querySelectorAll(".menu-item-btn");
     const cartCount = document.querySelector(".cart-count");
     const cartIcon = document.querySelector(".nav-icon .fa-shopping-cart").parentElement;
-    let count = 0;
-    let cartItems = [];
-    
-    // Calculate initial total price
+    let count = 0; 
+    let cartItems = []; 
     let totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
 
-    // Create checkout overlay
-    const checkoutOverlay = document.createElement("div");
-    checkoutOverlay.className = "checkout-overlay";
+    // Function to handle adding items to cart
+    function addToCart(button, isSpecialItem = false) {
+        const container = isSpecialItem ? button.closest('.special-item') : button.closest('.menu-item');
+        const itemName = isSpecialItem 
+            ? container.querySelector('.special-item-title').textContent 
+            : container.querySelector('.menu-item-name').textContent;
+        const itemPrice = parseFloat(
+            isSpecialItem 
+                ? container.querySelector('.special-item-price').textContent.replace('dh', '')
+                : container.querySelector('.menu-item-price').textContent.replace('dh', '')
+        );
+        
+        cartItems.push({ name: itemName, price: itemPrice });
+        count++;
+        cartCount.textContent = count;
+        cartCount.style.display = 'inline-block';
+        totalPrice += itemPrice;
+        
+        document.querySelector('.checkout-item-count').textContent = count;
+        const itemList = document.querySelector('.checkout-item-list');
+        const newItem = document.createElement('div');
+        newItem.className = 'checkout-item';
+        newItem.innerHTML = `
+            <span class="checkout-item-name">${itemName}</span>
+            <span class="checkout-item-price">${itemPrice.toFixed(2)}dh</span>
+        `;
+        itemList.appendChild(newItem);
+        
+        document.querySelector('.checkout-price').textContent = `${totalPrice.toFixed(2)}dh`;
+        document.querySelector('.total-price').textContent = `${totalPrice.toFixed(2)}dh`;
+
+        button.classList.add('added');
+        button.innerHTML = '<i class="fas fa-check"></i>';
+        
+        setTimeout(() => {
+            button.classList.remove('added');
+            button.innerHTML = '<i class="fas fa-plus"></i>';
+        }, 1000);
+    }
+
+    // Add event listeners to all add buttons
+    addButtons.forEach((button) => {
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+            const isSpecialItem = button.closest('.special-item') !== null;
+            addToCart(button, isSpecialItem);
+        });
+    });
+
+    const checkoutOverlay = document.createElement("div"); 
+    checkoutOverlay.className = "checkout-overlay";   
     checkoutOverlay.innerHTML = `
-      <div class="checkout-panel">
+      <div class="checkout-panel"> 
         <div class="checkout-header">
           <h3>Your Cart</h3>
           <button class="close-checkout"><i class="fas fa-times"></i></button>
@@ -81,13 +127,13 @@ document.addEventListener("DOMContentLoaded", function () {
           <h4>Items (<span class="checkout-item-count">${count}</span>)</h4>
           <div class="checkout-item-list">
             ${cartItems.map(item => `
-              <div class="checkout-item">
+              <div class="checkout-item"> 
                 <span class="checkout-item-name">${item.name}</span>
                 <span class="checkout-item-price">$${item.price.toFixed(2)}</span>
               </div>
             `).join('')}
           </div>
-        </div>
+        </div> 
         <div class="checkout-summary">
           <div class="checkout-subtotal">
             <span>Subtotal:</span>
@@ -106,16 +152,19 @@ document.addEventListener("DOMContentLoaded", function () {
             <span class="total-price">$${totalPrice.toFixed(2)}</span>
           </div>
         </div>
+        <a href="/source_payment_form/index.html">
         <button class="checkout-button">Proceed to Checkout</button>
-      </div>
-    `;
-    document.body.appendChild(checkoutOverlay);
+        </a>
 
-    // Add CSS for checkout panel to body
+        
+      </div> 
+    `;
+    document.body.appendChild(checkoutOverlay);  
+    
     const checkoutStyles = document.createElement("style");
     checkoutStyles.textContent = `
       .checkout-overlay {
-        position: fixed;
+        position: fixed; 
         top: 0;
         left: 0;
         width: 100%;
@@ -179,6 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
         display: flex;
         justify-content: space-between;
         margin: 10px 0;
+        
       }
       
       .checkout-total {
@@ -187,11 +237,16 @@ document.addEventListener("DOMContentLoaded", function () {
         margin-top: 15px;
         padding-top: 15px;
         border-top: 1px solid #eee;
+        color: black;
+
+
       }
       
       .checkout-coupon {
         display: flex;
         margin: 15px 0;
+      
+
       }
       
       .coupon-input {
@@ -237,83 +292,42 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
     `;
-    document.head.appendChild(checkoutStyles);
-
-    // Add items to cart
-    addButtons.forEach((button, index) => {
-      button.addEventListener("click", () => {
-        // Get item details
-        const menuItem = button.closest('.menu-item');
-        const itemName = menuItem.querySelector('.menu-item-name').textContent;
-        const itemPrice = parseFloat(menuItem.querySelector('.menu-item-price').textContent.replace('$', ''));
-        
-        // Add to cart array
-        cartItems.push({ name: itemName, price: itemPrice });
-        
-        // Update count and visual feedback
-        count++;
-        cartCount.textContent = count;
-        totalPrice += itemPrice;
-        
-        // Update checkout panel
-        document.querySelector('.checkout-item-count').textContent = count;
-        const itemList = document.querySelector('.checkout-item-list');
-        const newItem = document.createElement('div');
-        newItem.className = 'checkout-item';
-        newItem.innerHTML = `
-          <span class="checkout-item-name">${itemName}</span>
-          <span class="checkout-item-price">$${itemPrice.toFixed(2)}</span>
-        `;
-        itemList.appendChild(newItem);
-        
-        document.querySelector('.checkout-price').textContent = `$${totalPrice.toFixed(2)}`;
-        document.querySelector('.total-price').textContent = `$${totalPrice.toFixed(2)}`;
-
-        // Animation for button
-        button.style.transform = "scale(1.2)";
-        setTimeout(() => {
-          button.style.transform = "";
-        }, 200);
-      });
-    });
-
-    // Toggle checkout panel when clicking on cart icon
+    document.head.appendChild(checkoutStyles); 
+    
+    
     cartIcon.addEventListener('click', function(e) {
       e.preventDefault();
       checkoutOverlay.style.display = 'flex';
     });
 
-    // Close checkout panel
     document.querySelector('.close-checkout').addEventListener('click', function() {
       checkoutOverlay.style.display = 'none';
     });
 
-    // Close checkout when clicking outside the panel
     checkoutOverlay.addEventListener('click', function(e) {
       if (e.target === checkoutOverlay) {
         checkoutOverlay.style.display = 'none';
       }
     });
 
-    // Apply coupon functionality
     document.querySelector('.apply-coupon').addEventListener('click', function() {
       const couponInput = document.querySelector('.coupon-input');
       const couponCode = couponInput.value.trim().toUpperCase();
       
       if (couponCode === 'SAVE10') {
-        // Apply 10% discount
+       
         const discountAmount = totalPrice * 0.1;
         const newTotal = totalPrice - discountAmount;
         
         document.querySelector('.checkout-discount').classList.remove('hidden');
-        document.querySelector('.discount-amount').textContent = `-$${discountAmount.toFixed(2)}`;
-        document.querySelector('.total-price').textContent = `$${newTotal.toFixed(2)}`;
+        document.querySelector('.discount-amount').textContent = `-dh${discountAmount.toFixed(2)}`;
+        document.querySelector('.total-price').textContent = `dh${newTotal.toFixed(2)}`;
         
         couponInput.disabled = true;
         this.disabled = true;
         this.textContent = "Applied";
       } else if (couponCode === 'CRAFT25') {
-        // Apply 25% discount
+       
         const discountAmount = totalPrice * 0.25;
         const newTotal = totalPrice - discountAmount;
         
@@ -330,16 +344,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-// Dark mode functionality
+
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("darkModeToggle");
-  const saved = localStorage.getItem("theme") || "light";
+  const saved = localStorage.getItem("theme") || "light"; 
 
-  // Apply on loading
+  
   if (saved === "dark") document.body.classList.add("dark-mode");
 
-  toggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
+  toggle.addEventListener("click", () => { 
+    document.body.classList.toggle("dark-mode"); 
     const isDark = document.body.classList.contains("dark-mode");
     localStorage.setItem("theme", isDark ? "dark" : "light");
   });
